@@ -1,0 +1,14 @@
+---
+
+- name: Custom | Get the hosts public SSH key
+  command: cat ~/.ssh/id_rsa.pub
+  register: host_public_ssh_key
+  always_run: yes
+  delegate_to: 127.0.0.1
+
+- name: Custom | Add the host users public key into authorized_keys on vagrantbox
+  always_run: yes
+  lineinfile:
+      dest='/home/vagrant/.ssh/authorized_keys'
+      state=present
+      line="{{ host_public_ssh_key.stdout }}"

@@ -1,0 +1,6 @@
+---
+
+- name: Custom | copy database settings file
+  template: src=drupal-db-settings.j2 dest=/var/www/drupal-db-settings.inc
+  tags: custom
+  sudo: true

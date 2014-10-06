@@ -1,0 +1,6 @@
+---
+
+- name: Custom | Create a local drush alias file
+  template: src=drush-local-alias.j2 dest=~/.drush/{{ boxname }}.aliases.drushrc.php
+  tags: custom
+  delegate_to: 127.0.0.1

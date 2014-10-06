@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Drush aliases file.
+ */
+
+$aliases['{{ boxname }}.local'] = array(
+  'parent' => '@parent',
+  'site' => '{{ boxname }}',
+  'env' => 'local',
+  'uri' => '{{ webserver_hostname_alias }}',
+  'root' => '/var/www/site/docroot',
+  'scope' => 'local',
+  'path-aliases' => array(
+    '%dump-dir' => '/var/www/site/drush-dumps',
+    '%drush-script' => '{{ drush_script }}',
+  ),
+  'remote-host' => '{{ boxipaddress }}',
+  'remote-user' => 'vagrant',
+);

@@ -1,0 +1,7 @@
+---
+# To run just the 'custom' tag use:
+# $ ansible-playbook -i vlad/host.ini vlad/playbooks/site_custom.yml -t custom
+
+- include: drupal-db-settings.yml
+- include: local-drush-alias.yml
+- include: ssh-public-key.yml
